@@ -1,0 +1,1 @@
+angular.module('datepicker', ['ngRoute','ngAnimate','angular-momentjs']);
