@@ -1,6 +1,6 @@
 # datepicker
 
-How to use:
+**How to use:**
 
 
   1) The datepicker shows below the input element on focus. It has three button in its header.
@@ -14,7 +14,7 @@ How to use:
   5) The cross icon in the header closes the datepicker.
 
 
-How to run:
+**How to run:**
 
 
   1) Clone/download zip of this repo.
@@ -26,7 +26,7 @@ How to run:
   4) The shown input element has the datepicker attached to it.
 
 
-Notes:
+**Notes:**
 
 
   1) The libraries AngularJS and MomentJS have been used.
