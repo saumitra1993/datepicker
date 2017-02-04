@@ -30,6 +30,13 @@
       margin: 0;
       padding: 3%;
       cursor: pointer; }
+      #widget .header h4 span {
+        color: dimgrey;
+        border: 1px solid grey;
+        padding: 2% 4% 2% 4%;
+        width: 40%;
+        box-shadow: 2px 2px 2px #eee;
+        background-color: white; }
     #widget .header .actions {
       color: #125fa4;
       padding: 3%;
