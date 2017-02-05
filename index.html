@@ -14,7 +14,7 @@
             <input type="text" ng-model="final_date" id="datepicker" ng-focus="showDatepicker = true"  />
             <div id="widget" show-widget="showDatepicker">
                 <div class="header" >
-                    <h4><span ng-click="showGrid('month')">{{activeMonth}}</span> <span ng-click="showGrid('year')">{{activeYear}}</span></h4>
+                    <h5><span ng-click="showGrid('month')">{{activeMonth | uppercase}}</span> <span ng-click="showGrid('year')">{{activeYear}}</span></h5>
                     <div class="actions">
                         <div class="action" ng-click="last()">
                             <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -31,36 +31,38 @@
                         
                     </div>
                 </div>
-                <table class="days-grid" ng-if="showDaysGrid == true">
-                    <thead>
-                        <tr>
-                            <td ng-repeat="weekday in weekdays">{{weekday}}</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="row in days_grid">
-                            <td ng-click="selectDate(date_obj)" ng-class="{'last-month' : !date_obj.activeMonth, 'selected' : date_obj.selected}" ng-repeat="date_obj in row" ng-init="date_obj.selected = false">{{date_obj.date}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <table class="months-grid" ng-if="showMonthsGrid == true">
-                    
-                    
-                    <tr ng-repeat="month_row in months">
-                        <td ng-click="selectMonth(month)" ng-repeat="month in month_row" >{{month}}</td>
-                    </tr>
+                <div class="grid-container">
+                    <table class="days-grid" ng-if="showDaysGrid == true">
+                        <thead>
+                            <tr>
+                                <td ng-repeat="weekday in weekdays">{{weekday}}</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="row in days_grid">
+                                <td ng-click="selectDate(date_obj)" ng-class="{'last-month' : !date_obj.activeMonth, 'selected' : date_obj.selected}" ng-repeat="date_obj in row" ng-init="date_obj.selected = false">{{date_obj.date}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                </table>
-                
-                <table class="years-grid" ng-if="showYearsGrid == true">
-                    
-                    
-                    <tr ng-repeat="year_row in years">
-                        <td ng-click="selectYear(year)" ng-repeat="year in year_row" >{{year}}</td>
-                    </tr>
+                    <table class="months-grid" ng-if="showMonthsGrid == true">
 
-                </table>
+
+                        <tr ng-repeat="month_row in months">
+                            <td ng-click="selectMonth(month)" ng-repeat="month in month_row" >{{month}}</td>
+                        </tr>
+
+                    </table>
+
+                    <table class="years-grid" ng-if="showYearsGrid == true">
+
+
+                        <tr ng-repeat="year_row in years">
+                            <td ng-click="selectYear(year)" ng-repeat="year in year_row" >{{year}}</td>
+                        </tr>
+
+                    </table>
+                </div>
             </div>
         </div>
         

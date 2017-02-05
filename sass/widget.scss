@@ -24,7 +24,7 @@ $color-base : #2086e4;
 
 #widget {
     border: 1px solid #eee;
-    height:300px;
+    min-height:300px;
     width: 300px;
     box-shadow: 5px 5px 2px #888888;
     position: absolute;
@@ -43,22 +43,34 @@ $color-base : #2086e4;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        h4 {
+        h5 {
             margin: 0;
             padding: 3%;
             cursor: pointer;
-            
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
             span {
-                color: dimgrey;
-                border: 1px solid grey;
+                color: black;
+                border: 1px solid #ccc;
                 padding: 2% 4% 2% 4%;
-                width: 40%;
-                box-shadow: 2px 2px 2px #eee;
+                border-radius: 2px;
                 background-color: white;
+                box-shadow: 1px 2px 2px #000;
+            }
+            span:hover {
+                background-color: darken(white,10%);
+            }
+            span:nth-child(1){
+                width: 50%;
+            }
+            span:nth-child(2){
+                width: 20%;
+                margin-left: 3%;
             }
         }
         .actions{
-            color: darken(#1d87e6,15%);
+            color: darken(#1d87e6,20%);
             padding: 3%;
             display: flex;
             justify-content: center;
@@ -71,11 +83,21 @@ $color-base : #2086e4;
             text-align: center;
             margin-left: 5%;
             cursor: pointer;
+            box-shadow: 1px 2px 2px #000;
         }
+    }
+    
+    .grid-container {
+        display: flex;
+        justify-content: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        flex-grow: 1;
     }
     
     .days-grid{
         @include grid;
+        margin-bottom: auto;
         thead {
             background-color: $color-base;
             padding: 0;
@@ -89,7 +111,7 @@ $color-base : #2086e4;
         td{
             border: none;
             margin: 0;
-            padding: 3%;
+            padding: 4%;
             cursor: pointer;
             &.last-month {
                 color: #9d9c99;
@@ -105,28 +127,30 @@ $color-base : #2086e4;
     .months-grid {
         
         @include grid;
-        margin-top: 20%;
+        
         border: 1px solid #eee;
         align-self: center;
         td{
-            border: 1px solid #eee;
+            border: 1px solid #ccc;
             margin: 0;
-            padding: 3%;
+            padding: 4%;
             cursor: pointer;
+            box-shadow: 2px 2px 2px #eee;
         }
     }
     
     .years-grid {
         
         @include grid;
-        margin-top: 20%;
+        
         border: 1px solid #eee;
         align-self: center;
         td{
-            border: 1px solid #eee;
+            border: 1px solid #ccc;
             margin: 0;
-            padding: 3%;
+            padding: 4%;
             cursor: pointer;
+            box-shadow: 2px 2px 2px #eee;
         }
     }
 }

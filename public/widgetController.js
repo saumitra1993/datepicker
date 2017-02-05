@@ -1,7 +1,7 @@
 angular.module("datepicker").controller("widgetController", function($scope,$q,$routeParams,$moment){
     
     var beginning_year = 0;
-    var year_offset = 9;
+    var year_offset = 15;
     $scope.final_date = "";
     $scope.showMonthsGrid = false;
     $scope.showYearsGrid = false;
@@ -90,7 +90,7 @@ angular.module("datepicker").controller("widgetController", function($scope,$q,$
             $scope.showYearsGrid = false;
         }
         else if(type == 'year'){
-            beginning_year = parseInt($scope.activeMonthObj.format("YYYY")) - 4;
+            beginning_year = parseInt($scope.activeMonthObj.format("YYYY")) - parseInt(year_offset/2);
             $scope.years = getYears(beginning_year); // grid of 9 elements where current year is in the center
             $scope.showMonthsGrid = false;
             $scope.showDaysGrid = false;
@@ -165,7 +165,7 @@ angular.module("datepicker").controller("widgetController", function($scope,$q,$
         var i = 0;
         var row = [];
         
-        while(i < 9){
+        while(i < year_offset){
             if(row.length == 3){
                 years.push(row);
                 row = [];

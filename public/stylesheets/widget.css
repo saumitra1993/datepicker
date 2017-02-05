@@ -8,7 +8,7 @@
 
 #widget {
   border: 1px solid #eee;
-  height: 300px;
+  min-height: 300px;
   width: 300px;
   box-shadow: 5px 5px 2px #888888;
   position: absolute;
@@ -26,19 +26,29 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
-    #widget .header h4 {
+    #widget .header h5 {
       margin: 0;
       padding: 3%;
-      cursor: pointer; }
-      #widget .header h4 span {
-        color: dimgrey;
-        border: 1px solid grey;
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-start;
+      width: 100%; }
+      #widget .header h5 span {
+        color: black;
+        border: 1px solid #ccc;
         padding: 2% 4% 2% 4%;
-        width: 40%;
-        box-shadow: 2px 2px 2px #eee;
-        background-color: white; }
+        border-radius: 2px;
+        background-color: white;
+        box-shadow: 1px 2px 2px #000; }
+      #widget .header h5 span:hover {
+        background-color: #e6e6e6; }
+      #widget .header h5 span:nth-child(1) {
+        width: 50%; }
+      #widget .header h5 span:nth-child(2) {
+        width: 20%;
+        margin-left: 3%; }
     #widget .header .actions {
-      color: #125fa4;
+      color: #10528d;
       padding: 3%;
       display: flex;
       justify-content: center;
@@ -49,7 +59,14 @@
       width: 30px;
       text-align: center;
       margin-left: 5%;
-      cursor: pointer; }
+      cursor: pointer;
+      box-shadow: 1px 2px 2px #000; }
+  #widget .grid-container {
+    display: flex;
+    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1; }
   #widget .days-grid {
     padding: 0;
     border: none;
@@ -58,7 +75,8 @@
     border-spacing: 0;
     height: 10%;
     color: #181818;
-    margin: 0; }
+    margin: 0;
+    margin-bottom: auto; }
     #widget .days-grid thead {
       background-color: #2086e4;
       padding: 0;
@@ -69,7 +87,7 @@
     #widget .days-grid td {
       border: none;
       margin: 0;
-      padding: 3%;
+      padding: 4%;
       cursor: pointer; }
       #widget .days-grid td.last-month {
         color: #9d9c99; }
@@ -86,14 +104,14 @@
     height: 10%;
     color: #181818;
     margin: 0;
-    margin-top: 20%;
     border: 1px solid #eee;
     align-self: center; }
     #widget .months-grid td {
-      border: 1px solid #eee;
+      border: 1px solid #ccc;
       margin: 0;
-      padding: 3%;
-      cursor: pointer; }
+      padding: 4%;
+      cursor: pointer;
+      box-shadow: 2px 2px 2px #eee; }
   #widget .years-grid {
     padding: 0;
     border: none;
@@ -103,11 +121,11 @@
     height: 10%;
     color: #181818;
     margin: 0;
-    margin-top: 20%;
     border: 1px solid #eee;
     align-self: center; }
     #widget .years-grid td {
-      border: 1px solid #eee;
+      border: 1px solid #ccc;
       margin: 0;
-      padding: 3%;
-      cursor: pointer; }
+      padding: 4%;
+      cursor: pointer;
+      box-shadow: 2px 2px 2px #eee; }
